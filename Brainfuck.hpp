@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 
 enum InstType 
@@ -29,7 +30,7 @@ public:
 
 
 private:
-	char *m_memory;
+	std::vector<char> m_memory;
 	unsigned int m_mem_size;
 	unsigned int m_cmptr;
 	bool m_isExtended;

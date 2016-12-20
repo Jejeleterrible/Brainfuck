@@ -6,8 +6,7 @@
 
 Brainfuck::Brainfuck(unsigned int mem_size, bool extended)
 {
-	m_memory = new char[mem_size];
-	memset(m_memory, 0, mem_size);
+	m_memory.push_back(0);
 	m_mem_size = mem_size;
 	m_cmptr = 0;
 
@@ -17,7 +16,7 @@ Brainfuck::Brainfuck(unsigned int mem_size, bool extended)
 
 Brainfuck::~Brainfuck()
 {
-	delete[] m_memory;
+	m_memory.clear();
 }
 
 InstType Brainfuck::Interpret(char ch)
@@ -26,6 +25,10 @@ InstType Brainfuck::Interpret(char ch)
 	{
 	case chev_r:
 		m_cmptr++;
+		if(m_memory.size()-1 < m_cmptr)
+		{
+			m_memory.push_back(0);
+		}
 		return chev_r;
 
 	case chev_l:
