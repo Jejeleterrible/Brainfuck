@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	}
 	
 	
-	Brainfuck brf(100);
+	Brainfuck brf;
 	brf.ExecFromFile(argv[1]);
 	std::getchar();
 

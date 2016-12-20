@@ -22,7 +22,7 @@ enum InstType
 class Brainfuck
 {
 public:
-	Brainfuck(unsigned int mem_size=3000, bool extended=false);
+	Brainfuck();
 	~Brainfuck();
 	enum InstType Interpret(char ch);
 	bool ExecFromString(const std::string &str);
@@ -33,6 +33,5 @@ private:
 	std::vector<char> m_memory;
 	unsigned int m_mem_size;
 	unsigned int m_cmptr;
-	bool m_isExtended;
 };
 

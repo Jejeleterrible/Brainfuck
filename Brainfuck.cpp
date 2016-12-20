@@ -4,13 +4,11 @@
 
 
 
-Brainfuck::Brainfuck(unsigned int mem_size, bool extended)
+Brainfuck::Brainfuck()
 {
 	m_memory.push_back(0);
-	m_mem_size = mem_size;
 	m_cmptr = 0;
 
-	m_isExtended = extended;
 }
 
 
