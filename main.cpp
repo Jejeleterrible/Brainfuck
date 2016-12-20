@@ -12,8 +12,8 @@ int main(int argc, char **argv)
 	}
 	
 	
-	Brainfuck brf;
-	brf.ExecFromFile(argv[1]);
+	Brainfuck<char> *brf = new Brainfuck<char>();
+	brf->ExecFromFile(argv[1]);
 	std::getchar();
 
 	return 0;
